@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<h1>ACHETE MES VELOS</h1>
+	<ul>
+		{% for bike in bikes %}
+		<li>
+			<a href="/velos/{{bike.id}}"><h2>{{bike.brand}} {{bike.name}} - {{bike.price}}€</h2></a>
+			{% if bike.in_stock %}
+			<p>En stock</p>
+			{% else %}
+			<p>Rupture de stock</p>
+			{% endif %}
+		</li>
+		<img src="static/images/{{bike.id}}.jpg" alt="{{bike.name}}" width="400" />
+		{% endfor %}
+	</ul>
+</html>

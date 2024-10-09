@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+	<h1>{{bike.brand}} {{bike.name}}</h1>
+	<p>{{bike.description}}</p>
+	<p>{{bike.price}}€</p>
+	{% if bike.in_stock %}
+	<a href="{{bike.link}}">Acheter sur Leboncoin</a>
+	OU
+	<a href="/achat/{{bike.id}}">Acheter sur ce site</a>
+	{% else %}
+	<p>Rupture de stock</p>
+	{% endif %}
+	<br />
+	<img src="../static/images/{{bike.id}}.jpg" alt="{{bike.name}}" width="400" />
+</html>
